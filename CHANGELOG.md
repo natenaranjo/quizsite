@@ -20,6 +20,14 @@
 
 ### Added or Changed
 - Creating the JavaScript file.
-- Beginning to add the code to view highscores.
+- Created the Start button.
 - Working on the timer code.
 
+## v0.0.3
+
+### Added or Changed
+- Finished the timer code
+- H2 welcome text on the start screen
+- Paragraph about the quiz on the start screen.
+- Once the quiz starts the welcome screen clears.
+- Once the timer reaches 0 display Game Over.
