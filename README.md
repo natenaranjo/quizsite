@@ -13,7 +13,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="300" height="200">
+    <img src="./assets/images/logo.png" alt="Logo" width="300" height="200">
   </a>
 
 <h3 align="center">Web API's: Code Quiz</h3>
@@ -21,14 +21,12 @@
   <p align="center">
     Learning to work with API's in JavaScript.
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/natenaranjo/quizsite"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://natenaranjo.github.io/quizsite/">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/natenaranjo/quizsite/issues">Report Bug</a>
   </p>
 </div>
 
