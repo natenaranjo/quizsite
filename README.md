@@ -1,4 +1,4 @@
-<div id="top"></div>
+<div id="top" align="center"></div>
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -64,11 +64,11 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Click the start button, the timer starts.
-- [ ] Once one question is answered, moves to the next question.
-- [ ] If a question is answered wrong, time is subtracted.
-- [ ] When all questions are answered or the timer reaches 0 the game is over.
-- [ ] When game is over I can save my initials and score.
+- [X] Click the start button, the timer starts.
+- [X] Once one question is answered, moves to the next question.
+- [X] If a question is answered wrong, time is subtracted.
+- [X] When all questions are answered or the timer reaches 0 the game is over.
+- [X] When game is over I can save my initials and score.
 
 See the [open issues](https://github.com/natenaranjo/quizsite/issues) for a full list of proposed features (and known issues).
 

@@ -31,3 +31,10 @@
 - Paragraph about the quiz on the start screen.
 - Once the quiz starts the welcome screen clears.
 - Once the timer reaches 0 display Game Over.
+
+## v0.0.4
+
+### Added or Changed
+- Timer codes now subtract times when a question is answered wrong.
+- Questions now pop up and when answered goes to the next question.
+- Created the End screen for when timer runs out or all questions have been answered.
