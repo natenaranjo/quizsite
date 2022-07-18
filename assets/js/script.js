@@ -5,9 +5,12 @@ let pEl = document.createElement("p");
 let flCon = document.querySelector(".fluid-container");
 let btnEl = document.createElement("button");
 let pIni = document.createElement("p");
+let timeEL = document.createElement("p");
 let inputEl = document.createElement("input");
 let submitEl = document.createElement("button");
 let restartEl = document.createElement("button");
+let viewEl = document.createElement("button");
+let liEl = document.createElement("li");
 
 
 // Creating the order list
@@ -20,17 +23,19 @@ let li4 = document.createElement("li");
 // Attributes for each Element.
 h2El.setAttribute("style", "font-size: 6vw; color: var(--third); padding: 24px;");
 h3El.setAttribute("style", "color: var(--third); font-size: 4vw; text-align: center;");
-pEl.setAttribute("style","color: var(--fourth); font-size: 2vw; width: 80%; text-align: center; padding: 24px;")
-pIni.setAttribute("style","color: var(--fourth); font-size: 2vw; width: 80%; text-align: center; padding: 24px;")
+pEl.setAttribute("style","color: var(--fourth); font-size: 2vw; width: 80%; text-align: center; padding: 24px;");
+pIni.setAttribute("style","color: var(--fourth); font-size: 2vw; width: 80%; text-align: center; padding: 24px;");
+timeEL.setAttribute("style","color: var(--third); font-size: 3vw; width: 80%; text-align: center; padding: 24px; margin: 20px;");
 btnEl.setAttribute("style", "width: 20vw; height: 5vh; border-radius: 15px; border: none; background-color: var(--third); color: var(--primary); font-size: 3vw;");
-listEl.setAttribute("style", "Padding: 25px; list-style: none; display: flex; flex-direction: column; justify-content: center; align-items: center;")
+listEl.setAttribute("style", "Padding: 25px; list-style: none; display: flex; flex-direction: column; justify-content: center; align-items: center;");
 li1.setAttribute("style", "width: 30vw; height: 5vh; border-radius: 15px; border: none; background-color: var(--third); color: var(--primary); font-size: 3vw; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 10px; margin: 10px;");
 li2.setAttribute("style", "width: 30vw; height: 5vh; border-radius: 15px; border: none; background-color: var(--third); color: var(--primary); font-size: 3vw; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 10px; margin: 10px;");
 li3.setAttribute("style", "width: 30vw; height: 5vh; border-radius: 15px; border: none; background-color: var(--third); color: var(--primary); font-size: 3vw; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 10px; margin: 10px;");
 li4.setAttribute("style", "width: 30vw; height: 5vh; border-radius: 15px; border: none; background-color: var(--third); color: var(--primary); font-size: 3vw; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 10px; margin: 10px;");
-inputEl.setAttribute("style", "width: 20vw; height: 3vh; background-color: var(--fourth); color: var(--primary); border: none; border-radius: 20px; margin: 10px; font-size: 2vw; text-align: center; text-transform: uppercase;");
-submitEl.setAttribute("style", "width: 20vw; height: 5vh; border-radius: 15px; border: none; background-color: var(--third); color: var(--primary); font-size: 3vw; margin: 10px;");
-restartEl.setAttribute("style", "width: 20vw; height: 5vh; border-radius: 15px; border: none; background-color: var(--third); color: var(--primary); font-size: 3vw; margin: 10px;");
+inputEl.setAttribute("style", "width: 20vw; height: 5vh; background-color: var(--fourth); color: var(--primary); border: none; border-radius: 20px; margin: 10px; font-size: 2vw; text-align: center; text-transform: uppercase;");
+submitEl.setAttribute("style", "width: 20vw; height: 5vh; border-radius: 15px; border: none; background-color: var(--third); color: var(--primary); font-size: 2vw; margin: 10px;");
+restartEl.setAttribute("style", "width: 20vw; height: 5vh; border-radius: 15px; border: none; background-color: var(--third); color: var(--primary); font-size: 2vw; margin: 10px;");
+viewEl.setAttribute("style", "width: 20vw; height: 5vh; border-radius: 15px; border: none; background-color: var(--third); color: var(--primary); font-size: 2vw; margin: 10px;");
 
 
 li1.setAttribute("type", "button");
@@ -124,6 +129,7 @@ function startQuiz() {
         
 
         // Appends the elements to the screen
+        flCon.appendChild(timeEL);
         flCon.appendChild(h3El);
         flCon.appendChild(listEl);
         listEl.appendChild(li1);
@@ -134,7 +140,7 @@ function startQuiz() {
     }    
         let id = 0;
         // Create the listen event for each multiple choice.
-        li1.selected = li1.addEventListener("click", () => {
+        li1.addEventListener("click", () => {
             if(li1.value != true){
                 timeLeft -= 30;
                 nextQuest();
@@ -143,7 +149,7 @@ function startQuiz() {
                 nextQuest();
             }
         })
-        li2.selected = li2.addEventListener("click", () => {
+        li2.addEventListener("click", () => {
             if(li2.value != true){
                 timeLeft -= 30;
                 nextQuest();
@@ -152,7 +158,7 @@ function startQuiz() {
                 nextQuest();
             }
         })
-        li3.selected = li3.addEventListener("click", () => {
+        li3.addEventListener("click", () => {
             if(li3.value != true){
                 timeLeft -= 30;
                 nextQuest();
@@ -161,13 +167,13 @@ function startQuiz() {
                 nextQuest();
             }
         })
-        li4.selected = li4.addEventListener("click", () => {
+        li4.addEventListener("click", () => {
             if(li4.value != true){
                 timeLeft -= 30;
                 nextQuest();
             } else {
                 score++;
-                nextQuest();
+                endQuest();
             }
         })
 
@@ -182,32 +188,69 @@ function startQuiz() {
 
         // What happens when the timer reaches 0 or all the questions are answered.
         function endQuest(){
+            timeEL.remove();
             h3El.remove();
             listEl.remove();
 
             h2El.textContent = "Quiz Over!";
-            pEl.textContent = "Score: " + score;
+            pEl.textContent = "Score: " + score * 20;
             pIni.textContent = "Please insert your initals in box";
             submitEl.textContent = "Submit Score";
             restartEl.textContent = "Restart Quiz";
+            viewEl.textContent = "View High Scores";
             flCon.appendChild(h2El);
             flCon.appendChild(pEl);
             flCon.appendChild(pIni);
             inputEl.setAttribute("maxlength", 3);
+            inputEl.id = "initials";
             flCon.appendChild(inputEl);
             flCon.appendChild(submitEl);
             flCon.appendChild(restartEl);
+            flCon.appendChild(viewEl);
+
+            
+
+            submitEl.addEventListener("click", () =>{
+                highScores = {
+                    initials: document.getElementById('initials').value.toUpperCase(),
+                    Score: score * 20
+                }
+                
+                window.localStorage.setItem("highScores", JSON.stringify(highScores));
+            })
+
+            restartEl.addEventListener("click", () => {
+                location.reload();
+            })
+
+            viewEl.addEventListener("click", () => {
+
+                pEl.remove();
+                pIni.remove();
+                listEl.remove();
+                inputEl.remove();
+                restartEl.remove();
+                submitEl.remove();
+                viewEl.remove();
+
+                h2El.textContent = "High Score";
+                let newScores = JSON.parse(localStorage.getItem("highScores"));
+                if (newScores !== null) {
+                    pEl.textContent = newScores.initials + " / " + newScores.Score;
+                }
+                flCon.appendChild(pEl);
+                flCon.appendChild(restartEl);
+                
+            })
         }
 
     
         // Timer function to start when the start button is clicked.
-        let timeEL = document.querySelector("#time");
         let timeLeft = 120;
 
         let timerInterval = setInterval(function(){
             timeLeft--;
             timeEL.textContent = "Time: " + timeLeft +"s";
-            timeEL.setAttribute("style", "color: var(--third); font-style: italic;");
 
             if(timeLeft <= 0) {
                 clearInterval(timerInterval);
@@ -221,6 +264,7 @@ function startQuiz() {
     // If page is refreshed will reset score to 0.
     if(sessionStorage.setItem("is_reloaded", true)){
         score = 0;
+        localStorage.clear();
     }
 
     quizRot("0");
