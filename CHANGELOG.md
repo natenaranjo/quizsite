@@ -38,3 +38,11 @@
 - Timer codes now subtract times when a question is answered wrong.
 - Questions now pop up and when answered goes to the next question.
 - Created the End screen for when timer runs out or all questions have been answered.
+
+## v0.0.5
+
+### Added or Changed
+- Created the save to local storage when "Submit Scores" is clicked.
+- Created the view High scores that pulls all the saved scores.  
+- Updated to clear local storage if page is closed or left.
+- Create the View high score screen.
